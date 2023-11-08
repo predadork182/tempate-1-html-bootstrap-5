@@ -12,3 +12,10 @@ body {
 .wrapp-header .nav-link:hover {
     color: #20cabd !important;
 }
+.full-slider {
+    min-height: 360px;
+    background-color: #f2f2f2;
+}
+.link-rapido {
+    background-color: #20cabd;
+}
