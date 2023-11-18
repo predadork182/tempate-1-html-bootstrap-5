@@ -199,16 +199,22 @@
           </div>
           <div class="modal-body">
               <div class="alert alert-danger d-flex align-items-center" role="alert">
-                A simple danger alert—check it out! <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
+                Erro ao logar <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
               </div>
-              <form class="px-4 py-3">
+              <form class="px-4 py-3 needs-validation" novalidate>
                 <div class="mb-3">
-                  <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                  <!-- <label for="exampleDropdownFormEmail1" class="form-label">Email address</label> -->
+                  <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" required>
+                  <div class="valid-feedback">
+                    Campo obrigatório
+                  </div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                  <!-- <label for="exampleDropdownFormPassword1" class="form-label">Password</label> -->
+                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" required>
+                  <div class="valid-feedback">
+                    Campo obrigatório
+                  </div>
                 </div>
                 <div class="mb-3">
                   <div class="form-check">
@@ -237,5 +243,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
 </body>
 </html>
